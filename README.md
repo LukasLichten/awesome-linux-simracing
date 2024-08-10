@@ -86,7 +86,8 @@ There are numerous solutions and issues (*I may make a blog post about it, event
 - [simshmbridge](https://github.com/Spacefreak18/simshmbridge) (AC, ACC, PCars2, AMS2, and needs recompile for each memorymap, and constantly copies data from Windows Shared Memory to shm, so not ideal)
 - [wineshm-go](https://github.com/LeonB/wineshm-go) (Passes the unix filehandle through a unix socket to the go programm deploying it, unfortunatly doesn't actually work, the filehandle is dead when reaching go again)
 - [shm-bridge](https://github.com/poljar/shm-bridge) (Simple Rust programm that uses WinAPI to back the SharedMemoryPages for ACC into `/dev/shm` and then sleep, allowing us to use regular shm to read)
- - This [fork](https://github.com/LukasLichten/shm-bridge/tree/generalized) allows passing in the name and size of the memory maps, making it universal
+  - This [fork](https://github.com/LukasLichten/shm-bridge/tree/generalized) allows passing in the name and size of the memory maps, making it universal
+  
 Known Issue: Protontricks flatpak version does not work ([error msg](https://gitlab.com/LukasLichten/wine-shakedown#running)), use the version from your packagemanager
 
 ## Server Managers
