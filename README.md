@@ -83,12 +83,18 @@ For development of further tools
   
 To access shared memory maps from games it is necessary to deploy some piece of software into the prefix while the game is running.  
 There are numerous solutions and issues (*I may make a blog post about it, eventually*).
-- [simshmbridge](https://github.com/Spacefreak18/simshmbridge) (AC, ACC, PCars2, AMS2, and needs recompile for each memorymap, and constantly copies data from Windows Shared Memory to shm, so not ideal)
-- [wineshm-go](https://github.com/LeonB/wineshm-go) (Passes the unix filehandle through a unix socket to the go programm deploying it, unfortunatly doesn't actually work, the filehandle is dead when reaching go again)
-- [shm-bridge](https://github.com/poljar/shm-bridge) (Simple Rust programm that uses WinAPI to back the SharedMemoryPages for ACC into `/dev/shm` and then sleep, allowing us to use regular shm to read)
-  - This [fork](https://github.com/LukasLichten/shm-bridge/tree/generalized) allows passing in the name and size of the memory maps, making it universal
-  
-Known Issue: Protontricks flatpak version does not work ([error msg](https://gitlab.com/LukasLichten/wine-shakedown#running)), use the version from your packagemanager
+- [Datalink](https://github.com/LukasLichten/Datalink): (WIP) Wrapps around the proton launch command similar to Mangohud (so can be automatically launched with the game), utilizes a config file left in the prefix to define the memory maps, uses a fork of [shm-bridge](https://github.com/poljar/shm-bridge) to back them to `/dev/shm`, also notifies about game launch/shutdown on the session-dbus
+- [shm-bridge](https://github.com/poljar/shm-bridge): Simple Rust programm that uses WinAPI to back the SharedMemoryPages for ACC into `/dev/shm` and then sleep, allowing us to use regular shm to read
+  - This [fork](https://github.com/LukasLichten/shm-bridge/tree/generalized) allows passing in the name and size of the memory maps as parameters, making it universal
+- [wine-linux-shm-adapter](https://github.com/Spacefreak18/wine-linux-shm-adapter): Rf2 and AC, but needs to be compiled for each memorymap individually (and deployed as such), and works by copying data constantly from the SharedMemoryMap into the shm file
+- [simshmbridge](https://github.com/Spacefreak18/simshmbridge): Like [wine-linux-shm-adapter](https://github.com/Spacefreak18/wine-linux-shm-adapter) (both from Spacefreak18), but for AC & ACC, or PCars2 & AMS2 (both have to be compiled seperatly), can be deployed with the game or seperate, and copy `/dev/shm` maps back into a SharedMemoryMap for a seperate wine prefix.
+- [wineshm-go](https://github.com/LeonB/wineshm-go): Passes the unix filehandle through a unix socket to the go programm deploying it, unfortunatly doesn't actually work, the filehandle is dead when reaching go again
+
+Most solutions need to be launched via protontricks after the game has started.  
+Known Issues with that:
+- Game has to be launched first, as otherwise the game will get stuck in Launching...
+- Steam state can get stuck on Running if the bridge is running when the game has already closed (steam force stop will also not work)
+- Protontricks flatpak version does not work ([error msg](https://gitlab.com/LukasLichten/wine-shakedown#running)), use the version from your packagemanager
 
 ## Server Managers
 Management software (also as docker containers) for deploying game servers for Racing Games:
