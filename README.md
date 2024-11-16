@@ -33,6 +33,8 @@ Check out [Peripherals Help](/Additional/Peripherals-Help.md) for other help wit
 ## Launchers
 Game and mod launchers:
 - [BeamMP](/Additional/BeamMP.md) ([AUR](https://aur.archlinux.org/packages/beammp-launcher-git))
+  
+Content Manager can be used with AssettoCorsa, see [here](/Additional/AssettoCorsa-Guide.md)
 
 ## SimRacing Tools
 Simracing is unique with that most games and players require extra software for displaying extra information, driving other hardware and managing mods.
@@ -90,3 +92,7 @@ Known Issues with that:
 Management software (also as docker containers) for deploying game servers for Racing Games:
 - [accservermanager](https://github.com/gotzl/accservermanager) 
 - [assetto-server-manager](https://github.com/JustaPenguin/assetto-server-manager) 
+
+## Additional Help
+[Guides & Troubleshooting](/Additional/Readme.md)  
+

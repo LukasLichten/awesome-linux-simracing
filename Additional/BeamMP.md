@@ -13,7 +13,8 @@ It is of note, that the launcher will currently place all config and resource fi
 so it might be wise to setup a launch shortcut that takes car of setting the working directory.
 
 ## Manual Installation/Compilation
-*todo: make this section more digestable*
+*todo: make this section more digestable*  
+  
 You will need `vcpkg` utility and it's build enviroment.  
 Install `zlib nlohmann-json openssl cpp-httplib[openssl]` using vcpkg.  
 Clone the [BeamMP-Launcher](https://github.com/BeamMP/BeamMP-Launcher) repo (recursively, although the Linux version compiles without evpp by the looks of it),
