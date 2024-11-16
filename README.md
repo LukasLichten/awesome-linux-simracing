@@ -24,25 +24,15 @@ For setting Wheel rotation and Force Feedback Strength:
 
 Moza and Cammus android apps (should) work (they communicated directly with the wheelbase)
 
-## None Functioning Peripherals
-Peripherals (like Pedals, Shifters, Handbrakes, etc.) may not work immedialty.  
-First you should check if the device initializes correctly via
-```
-# dmesg
-```
-If it initializes correctly, and you can find it's event file in `/dev/input`, but can't access it,
-then you have to create a udev rule 
-(as input devices are protected from the user by default, except for game controllers,
-but systemd sometimes does the funny and doesn't give permissions).  
+## Virtual Devices
+Creating virtual devices to merge/alter real devices (to work around compatibility issues etc):
+- [protopedal](https://gitlab.com/openirseny/protopedal)
   
-Create a new file in `/etc/udev/rules.d/`, usually with the name template `[2digit-number]-[name].rules`, and add `uaccess` to your device.  
-Here is an example rule `71-simpedals.rules` for the Thrustmaster T-LCM pedals through USB:
-```
-SUBSYSTEMS=="input", ATTRS{id/product}=="b371", ATTRS{id/vendor}=="044f", ENV{ID_INPUT_JOYSTICK}="1", TAG+="uaccess"
-```
-  
-There can be issues with pedals being detected in games, for this:  
-- [protopedal](https://gitlab.com/openirseny/protopedal) (for creating virtual devices with extra buttons and axis)
+Check out [Peripherals Help](/Additional/Peripherals-Help.md) for other help with Peripherals
+
+## Launchers
+Game and mod launchers:
+- [BeamMP](/Additional/BeamMP.md) ([AUR](https://aur.archlinux.org/packages/beammp-launcher-git))
 
 ## SimRacing Tools
 Simracing is unique with that most games and players require extra software for displaying extra information, driving other hardware and managing mods.
