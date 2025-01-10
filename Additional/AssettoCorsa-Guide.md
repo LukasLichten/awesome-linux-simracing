@@ -47,7 +47,7 @@ Additionally, if you installed AssettoCorsa in a different Library, then the com
   
 We create a symlink like this:
 ```
-ln -s '$HOME/.steam/steam/config/loginusers.vdf' '$HOME/steamapps/compatdata/244210/pfx/drive_c/Program Files (x86)/Steam/config/loginusers.vdf'
+ln -s '$HOME/.steam/steam/config/loginusers.vdf' '$HOME/.steam/steam/steamapps/compatdata/244210/pfx/drive_c/Program Files (x86)/Steam/config/loginusers.vdf'
 ```
   
 Also, place the `Content Manager.exe` into the `steamapps/common/assettocorsa` folder.
@@ -92,7 +92,7 @@ You can use the dialog to select the folder.
   
 The path should look something like this (depending obviously on how it is installed):
 ```
-Z:\home\yourusername\.local\share\Steam\steamapps\common\assettocorsa\
+Z:\home\yourusername\.steam\steam\steamapps\common\assettocorsa\
 ```
 
 ## CSP, Sol and other Mods
@@ -124,12 +124,12 @@ Some Mods (Sol) want you to extract manually into the game direcory.
 Under Linux this is still install folder of AC, **NOT** the compatdata folder.  
 Example path:
 ```
-~/.local/share/Steam/steamapps/common/assettocorsa/
+~/.steam/steam/steamapps/common/assettocorsa/
 ```
   
 Setups, Replays, Content Manager Configs and the like are still stored within compatdata, the path usually looks something like this:
 ```
-~/.local/share/Steam/steamapps/compatdata/244210/pfx/drive_c/users/steamuser/Documents/AssettoCorsa
+~/.steam/steam/steamapps/compatdata/244210/pfx/drive_c/users/steamuser/Documents/AssettoCorsa
 ```
   
 ## Troubleshooting and Known issues
@@ -158,9 +158,9 @@ and under X11 it can only show one monitor and will likely break quickly (aka li
 As we launch Content Manager through Steam we do get access to Theater view (in both x11 and wayland), 
 which will show us Content Manager, except with multiple issues:
 - Your controllers (and without controllers your head) will act as a cursor, but under Wayland you will be prompted to permit this virtual input device on first hover (and you can only confirm this on your flatscreen monitor)
-- Opening any dialog/dropbox/pop-up will cause it to loose capture while that window is open (x11 it will glitch out instead)
+- Opening any dialog/dropbox/pop-up will cause it to loose capture while that window is open (x11 it will glitch out for the duration instead)
   - This means you can't see what you are selecting, but also can't see where to move/click to close the interaction
   - As Content Manager is very heavy on pop-ups, making navigation practically impossible
-  - End of session dialogs are also effected, and have to be closed before continuing
+  - End of session dialogs are also effected, and have to be closed before you can continue seeing things
   
 There are desktop/window overlay solutions, like [wlx-overlay-s](https://github.com/galister/wlx-overlay-s), with X11 and wayland support.

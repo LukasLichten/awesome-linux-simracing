@@ -2,7 +2,7 @@
 With version 2.3.2 of the [BeamMP Launcher](https://github.com/BeamMP/BeamMP-Launcher) has native linux compatibility, 
 enabling the use of the BeamNG native client, and therefore features like ffb support that do not work in the Proton version.
   
-Although for now they do not provide any binaries (and limited build instructions).  
+Although for now they do not provide any binaries.  
 
 ## Installation
 There are community packages for the launcher
@@ -10,16 +10,24 @@ There are community packages for the launcher
 
 ## Usage
 It is of note, that the launcher will currently place all config and resource files into your working directory (likely home),
-so it might be wise to setup a launch shortcut that takes car of setting the working directory.
+so it might be wise to setup a launch shortcut that takes care of setting the working directory.
 
 ## Manual Installation/Compilation
-*todo: make this section more digestable*  
+There are now [Linux build instructions](https://github.com/BeamMP/BeamMP-Launcher?tab=readme-ov-file#how-to-build-for-linux) from the Team,
+so here is just some extra advice:  
   
-You will need `vcpkg` utility and it's build enviroment.  
-Install `zlib nlohmann-json openssl cpp-httplib[openssl]` using vcpkg.  
-Clone the [BeamMP-Launcher](https://github.com/BeamMP/BeamMP-Launcher) repo (recursively, although the Linux version compiles without evpp by the looks of it),
-and cd into it.  
-Setup the build system using `cmake -DCMAKE_BUILD_TYPE=Release . -B bin -DCMAKE_TOOLCHAIN_FILE="$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake" -DVCPKG_TARGET_TRIPLET=x64-linux`  
-Then build using `cmake --build bin --parallel --config Release`.  
+Besides standard build tools and `cmake`, you will need `vcpkg` utility and it's build enviroment.  
+The build enviroment is under Linux often not shipped with the binaries (like for the Arch `extra/vcpkg`, however `aur/vcpkg-git` does), 
+so you need to clone the vcpkg [repo](https://github.com/microsoft/vcpkg) and setting the enviroment variable accordingly:
+```
+export $VCPKG_ROOT=[your path here]
+```
+  
+After cloning the [BeamMP-Launcher](https://github.com/BeamMP/BeamMP-Launcher) repo (recursviely), 
+the offical guide assumes you use home to store your vcpkg root, so you can use this command instead:
+```
+cmake -DCMAKE_BUILD_TYPE=Release . -B bin -DCMAKE_TOOLCHAIN_FILE="$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake" -DVCPKG_TARGET_TRIPLET=x64-linux
+cmake --build bin --parallel --config Release
+```
   
 You can find the finished binary in `bin/BeamMP-Launcher`.

@@ -14,6 +14,7 @@ Wheels will be usually recognized as HID devices (and usable as a limb game cont
 - [universal-pidff](https://github.com/JacKeTUs/universal-pidff) (Moza, Cammus, etc)
 - [OpenFFBoard](https://github.com/Ultrawipf/OpenFFBoard)
 
+For further information of support for particular wheels, see [linux-steering-wheels](https://github.com/JacKeTUs/linux-steering-wheels).
 
 ## Wheel Settings Configuration
 For setting Wheel rotation and Force Feedback Strength:
@@ -32,7 +33,7 @@ Check out [Peripherals Help](/Additional/Peripherals-Help.md) for other help wit
 
 ## Launchers
 Game and mod launchers:
-- [BeamMP](/Additional/BeamMP.md) ([AUR](https://aur.archlinux.org/packages/beammp-launcher-git))
+- [BeamMP](https://github.com/BeamMP/BeamMP-Launcher) ([AUR](https://aur.archlinux.org/packages/beammp-launcher-git))
   
 Content Manager can be used with AssettoCorsa, see [here](/Additional/AssettoCorsa-Guide.md)
 
@@ -96,3 +97,6 @@ Management software (also as docker containers) for deploying game servers for R
 ## Additional Help
 [Guides & Troubleshooting](/Additional/Readme.md)  
 
+## Contributions
+Please create a Pull Request or Issue if you find software that is not mentioned here (or, find one of my many spelling misstakes...),
+these contributions would be much appreciated.
