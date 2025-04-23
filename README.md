@@ -11,7 +11,7 @@ Wheels will be usually recognized as HID devices (and usable as a limb game cont
 - [t150_driver](https://github.com/scarburato/t150_driver) (Thrustmaster T150 & TMX)
 - [new-lg4ff](https://github.com/berarma/new-lg4ff) (Logitech WingMan, MOMO, DFGT, G25, G27, G29, G923-PS4)
 - Linux Kernel 6.3 and up (Logitech G920 and G923-Xbox)
-- [universal-pidff](https://github.com/JacKeTUs/universal-pidff) (Moza, Cammus, etc)
+- Linux Kernel 6.15 and up (also 6.12.24+, 6.13.12+, 6.14.3+) comes with [universal-pidff](https://github.com/JacKeTUs/universal-pidff) (Moza, Cammus, etc)
 - [OpenFFBoard](https://github.com/Ultrawipf/OpenFFBoard)
 
 For further information of support for particular wheels, see [linux-steering-wheels](https://github.com/JacKeTUs/linux-steering-wheels).
@@ -60,7 +60,7 @@ Taking the game telemetry to physical display, provide additional force feedback
 
 ### Helper Software
 Software to help manage mods, setups, liveries, etc.
-- [acc-setupmanager](https://gitlab.com/LukasLichten/acc-setupmanager) (Simple Multiplatform Setup Manager in fltk)
+- [acc-setupmanager](https://gitlab.com/LukasLichten/acc-setupmanager) (Simple Multiplatform Setup Manager) [AUR](https://aur.archlinux.org/packages/acc-setupmanager-git)
 - [acc_skinmanager](https://github.com/LukasLichten/acc_skinmanager) (Livery utility, mainly for mass importing livieries)
 - [acc_csv2bop](https://github.com/LukasLichten/acc_csv2bop) (For handling ACC bop.json files)
 
@@ -76,7 +76,7 @@ For development of further tools
   
 To access shared memory maps from games it is necessary to deploy some piece of software into the prefix while the game is running.  
 There are numerous solutions and issues (*I may make a blog post about it, eventually*).
-- [Datalink](https://github.com/LukasLichten/Datalink): (WIP) Wrapps around the proton launch command similar to Mangohud (so can be automatically launched with the game), utilizes a config file left in the prefix to define the memory maps, uses a fork of [shm-bridge](https://github.com/poljar/shm-bridge) to back them to `/dev/shm`, also notifies about game launch/shutdown on the session-dbus
+- [Datalink](https://github.com/LukasLichten/Datalink): Wrapps around the proton launch command similar to Mangohud (so can be automatically launched with the game), utilizes a config file left in the prefix to define the memory maps, uses a fork of [shm-bridge](https://github.com/poljar/shm-bridge) to back them to `/dev/shm`, also notifies about game launch/shutdown on the session-dbus ([AUR](https://aur.archlinux.org/packages/datalink-git))
 - [shm-bridge](https://github.com/poljar/shm-bridge): Simple Rust programm that uses WinAPI to back the SharedMemoryPages for ACC into `/dev/shm` and then sleep, allowing us to use regular shm to read
   - This [fork](https://github.com/LukasLichten/shm-bridge/tree/generalized) allows passing in the name and size of the memory maps as parameters, making it universal
 - [wine-linux-shm-adapter](https://github.com/Spacefreak18/wine-linux-shm-adapter): Rf2 and AC, but needs to be compiled for each memorymap individually (and deployed as such), and works by copying data constantly from the SharedMemoryMap into the shm file
