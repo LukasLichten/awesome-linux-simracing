@@ -1,0 +1,1 @@
+SUBSYSTEM=="input", KERNEL=="event*", ATTRS{idVendor}=="<vendor>", ATTRS{idProduct}=="<product>", ACTION=="add", MODE="0660", GROUP="<input-group>", TAG+="systemd", ENV{SYSTEMD_WANTS}+="protopedal-<device>@$env{DEVNAME}.service"

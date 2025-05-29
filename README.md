@@ -97,6 +97,13 @@ Management software (also as docker containers) for deploying game servers for R
 ## Additional Help
 [Guides & Troubleshooting](/Additional/Readme.md)  
 
+## Licensing
+This repo is licensed under `Creative Commons Attribution Share Alike 4.0`.  
+Except for the Archive of the `community-configs-for-protopedal` found in `Additional/community-configs-for-protopedal`,
+these are licensed under `GPL-3.0`.  
+  
+Projects linked in this Repository under various licenses, including propritary.
+
 ## Contributions
 Please create a Pull Request or Issue if you find software that is not mentioned here (or, find one of my many spelling misstakes...),
 these contributions would be much appreciated.

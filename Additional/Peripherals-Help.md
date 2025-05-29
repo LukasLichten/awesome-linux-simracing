@@ -23,8 +23,54 @@ Here is an example rule `71-simpedals.rules` for the Thrustmaster T-LCM pedals t
 SUBSYSTEMS=="input", ATTRS{id/product}=="b371", ATTRS{id/vendor}=="044f", ENV{ID_INPUT_JOYSTICK}="1", TAG+="uaccess"
 ```
 
-## Protopedal configs
-- [Lawstorant's community configs for protopedal](https://github.com/Lawstorant/community-configs-for-protopedal)
+## Protopedal configs/scripts
+The old `community-configs-for-protopedal` by [Lawstorant](https://github.com/Lawstorant) are archived [here](/Additional/community-configs-for-protopedal/README.md)
+
+An example script (courtesy of [ccalhoun1999](https://github.com/ccalhoun1999)):
+```
+#!/usr/bin/env bash
+
+sudo protopedal \
+  --name "Protopedal V1" \
+  --vendor "0eb7" \
+  --product "1840" \
+  --axis WHEEL --source 1:X \
+  --axis GAS --source 0:RZ \
+  --axis BRAKE --source 0:RY \
+  --axis THROTTLE --source 0:RX \
+  --axis RUDDER --source 2:RUDDER \
+  --button Happy1 --source 3:TRIGGER \
+  --button Happy2 --source 3:THUMB \
+  --button Happy3 --source 3:TOP2 \
+  --button Happy4 --source 3:BASE3 \
+  --button Happy5 --source 3:0x12E \
+  --button Happy6 --source 3:THUMB2 \
+  --button Happy7 --source 3:BASE4 \
+  --button Happy8 --source 3:BASE6 \
+  --button Happy9 --source 3:0x12D \
+  --button Happy10 --source 3:0x12C \
+  --button Happy11 --source 3:BASE \
+  --button Happy12 --source 3:BASE2 \
+  --button Happy13 --source 3:TOP \
+  --button Happy14 --source 3:PINKIE \
+  --button Happy15 --source 3:BASE5 \
+  --button Happy16 --source 4:TRIGGER \
+  --button Happy17 --source 4:THUMB \
+  --button Happy18 --source 4:THUMB2 \
+  --button Happy19 --source 4:TOP \
+  --button Happy20 --source 4:TOP2 \
+  --button Happy21 --source 4:PINKIE \
+  --button Happy22 --source 4:BASE2 \
+  --ffb-device 1 \
+  --no-auto-axes \
+  --no-auto-buttons \
+  --grab \
+  /dev/input/by-id/usb-SIMAGIC_Alpha_Pedal_Neo_57888D9C080A314D080AFF04-0101000B-0001000B-event-joystick \
+  /dev/input/by-id/usb-Smarty_Co._VRS_DirectForce_Pro_Wheel_Base_000745094-event-if00 \
+  /dev/input/by-id/usb-Gudsen_HBP_Handbrake_1F002B000757465034363020-if02-event-joystick \
+  /dev/input/by-id/usb-Teensyduino_Keyboard_Mouse_Joystick_8733770-if03-event-joystick \
+  /dev/input/by-id/usb-DragonRise_inc._Generic_USB_Joystick-event-joystick
+```
 
 ## Testing tools
 - [Hardwaretester's Gamepad-Tester Website](https://hardwaretester.com/gamepad) (A website, mileage may vary)
