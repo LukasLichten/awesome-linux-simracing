@@ -22,8 +22,11 @@ For setting Wheel rotation and Force Feedback Strength:
 - [boxflat](https://github.com/Lawstorant/boxflat) (Moza)
 - [AccuforceV2Tool](https://github.com/Spacefreak18/accuforcev2tool) (AccuforceV2 recalibration)
 
-
 Moza and Cammus android apps (should) work (they communicated directly with the wheelbase)
+
+
+Read the game telemetry to enable rev lights
+- [logitech-linux-rpm-led](https://github.com/IvanVojtko/logitech-linux-rpm-led) (Logitech only)
 
 ## Virtual Devices
 Creating virtual devices to merge/alter real devices (to work around compatibility issues etc):
