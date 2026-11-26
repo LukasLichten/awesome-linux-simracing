@@ -60,6 +60,7 @@ Get yelled at by Jeff
 ### Extra Hardware (Bass Shakers, Tachometers, Simlights, other Arduino stuff)
 Taking the game telemetry to physical display, provide additional force feedback, etc. (often through Arduino's)
 - [monocoque](https://github.com/Spacefreak18/monocoque)
+- [OpenRigCue](https://github.com/greghavens/openrigcue): Linux x86-64 tool that uses game telemetry to drive motion rigs, bass shakers, fans, and other accessories. Includes a bridge for supported Proton games.
 
 ### Helper Software
 Software to help manage mods, setups, liveries, etc.
